@@ -97,21 +97,59 @@ class Journal
 
         try
         {
+            // Determine format based on file extension
+            bool isCsv = filename.ToLower().EndsWith(".csv");
+            
             using (StreamWriter writer = new StreamWriter(filename))
             {
-                foreach (JournalEntry entry in _entries)
+                if (isCsv)
                 {
-                    writer.WriteLine(entry.ToString());
-                    writer.WriteLine("-------------------");
+                    // Write CSV header
+                    writer.WriteLine("Date,Prompt,Response");
+                    
+                    // Write entries in CSV format
+                    foreach (JournalEntry entry in _entries)
+                    {
+                        string csvLine = $"{EscapeCsvField(entry.Date)},{EscapeCsvField(entry.Prompt)},{EscapeCsvField(entry.Response)}";
+                        writer.WriteLine(csvLine);
+                    }
+                }
+                else
+                {
+                    // Write in original text format
+                    foreach (JournalEntry entry in _entries)
+                    {
+                        writer.WriteLine(entry.ToString());
+                        writer.WriteLine("-------------------");
+                    }
                 }
             }
             
-            Console.WriteLine($"\n✅ Successfully saved {_entries.Count} entries to '{filename}'!");
+            string format = isCsv ? "CSV" : "text";
+            Console.WriteLine($"\n✅ Successfully saved {_entries.Count} entries to '{filename}' in {format} format!");
         }
         catch (Exception ex)
         {
             Console.WriteLine($"❌ Error saving file: {ex.Message}");
         }
+    }
+
+    private string EscapeCsvField(string field)
+    {
+        if (string.IsNullOrEmpty(field))
+            return "\"\"";
+            
+        // Check if field contains comma, quote, or newline
+        bool needsQuoting = field.Contains(",") || field.Contains("\"") || field.Contains("\n") || field.Contains("\r");
+        
+        if (needsQuoting)
+        {
+            // Escape quotes by doubling them
+            string escapedField = field.Replace("\"", "\"\"");
+            return $"\"{escapedField}\"";
+        }
+        
+        return field;
     }
 
     public void LoadFromFile(string filename)
@@ -127,33 +165,62 @@ class Journal
             string[] lines = File.ReadAllLines(filename);
             List<JournalEntry> loadedEntries = new List<JournalEntry>();
             
-            // Parse the file to extract journal entries
-            for (int i = 0; i < lines.Length; i++)
+            // Determine format based on file extension
+            bool isCsv = filename.ToLower().EndsWith(".csv");
+            
+            if (isCsv)
             {
-                string line = lines[i];
-                
-                // Check if this line starts with "Date:" (new format)
-                if (line.StartsWith("Date: "))
+                // Parse CSV format
+                for (int i = 0; i < lines.Length; i++)
                 {
-                    if (i + 2 < lines.Length && 
-                        lines[i + 1].StartsWith("Prompt: ") && 
-                        lines[i + 2].StartsWith("Response: "))
-                    {
-                        string date = line.Substring(6); // Remove "Date: "
-                        string prompt = lines[i + 1].Substring(8); // Remove "Prompt: "
-                        string response = lines[i + 2].Substring(10); // Remove "Response: "
+                    string line = lines[i].Trim();
+                    
+                    // Skip empty lines
+                    if (string.IsNullOrEmpty(line))
+                        continue;
                         
-                        loadedEntries.Add(new JournalEntry(date, prompt, response));
-                        i += 2; // Skip the next two lines since we've processed them
+                    // Skip header line (first non-empty line)
+                    if (i == 0 && (line.StartsWith("Date,") || line.StartsWith("\"Date\"")))
+                        continue;
+                    
+                    // Parse CSV line
+                    string[] fields = ParseCsvLine(line);
+                    if (fields.Length >= 3)
+                    {
+                        loadedEntries.Add(new JournalEntry(fields[0], fields[1], fields[2]));
                     }
                 }
-                // Handle old format (date|prompt|response)
-                else if (line.Contains("|"))
+            }
+            else
+            {
+                // Parse text formats (original logic)
+                for (int i = 0; i < lines.Length; i++)
                 {
-                    string[] parts = line.Split('|');
-                    if (parts.Length == 3)
+                    string line = lines[i];
+                    
+                    // Check if this line starts with "Date:" (new format)
+                    if (line.StartsWith("Date: "))
                     {
-                        loadedEntries.Add(new JournalEntry(parts[0], parts[1], parts[2]));
+                        if (i + 2 < lines.Length && 
+                            lines[i + 1].StartsWith("Prompt: ") && 
+                            lines[i + 2].StartsWith("Response: "))
+                        {
+                            string date = line.Substring(6); // Remove "Date: "
+                            string prompt = lines[i + 1].Substring(8); // Remove "Prompt: "
+                            string response = lines[i + 2].Substring(10); // Remove "Response: "
+                            
+                            loadedEntries.Add(new JournalEntry(date, prompt, response));
+                            i += 2; // Skip the next two lines since we've processed them
+                        }
+                    }
+                    // Handle old format (date|prompt|response)
+                    else if (line.Contains("|"))
+                    {
+                        string[] parts = line.Split('|');
+                        if (parts.Length == 3)
+                        {
+                            loadedEntries.Add(new JournalEntry(parts[0], parts[1], parts[2]));
+                        }
                     }
                 }
             }
@@ -166,13 +233,56 @@ class Journal
             
             // Replace current entries with loaded entries
             _entries = loadedEntries;
-            Console.WriteLine($"✅ Successfully loaded {_entries.Count} entries from '{filename}'!");
+            string format = isCsv ? "CSV" : "text";
+            Console.WriteLine($"✅ Successfully loaded {_entries.Count} entries from '{filename}' in {format} format!");
             Console.WriteLine("🔄 Previous entries have been replaced with loaded entries.");
         }
         catch (Exception ex)
         {
             Console.WriteLine($"❌ Error loading file: {ex.Message}");
         }
+    }
+
+    private string[] ParseCsvLine(string line)
+    {
+        List<string> fields = new List<string>();
+        bool inQuotes = false;
+        string currentField = "";
+        
+        for (int i = 0; i < line.Length; i++)
+        {
+            char c = line[i];
+            
+            if (c == '"')
+            {
+                if (inQuotes && i + 1 < line.Length && line[i + 1] == '"')
+                {
+                    // Double quote - add single quote to field
+                    currentField += '"';
+                    i++; // Skip next quote
+                }
+                else
+                {
+                    // Toggle quote mode
+                    inQuotes = !inQuotes;
+                }
+            }
+            else if (c == ',' && !inQuotes)
+            {
+                // End of field
+                fields.Add(currentField);
+                currentField = "";
+            }
+            else
+            {
+                currentField += c;
+            }
+        }
+        
+        // Add the last field
+        fields.Add(currentField);
+        
+        return fields.ToArray();
     }
 
     public int GetEntryCount()
@@ -236,7 +346,7 @@ class Program
         Console.WriteLine("\n📂 Load Journal from File");
         Console.WriteLine("==========================");
         
-        Console.Write("Enter the filename to load from (e.g., 'my_journal.txt'): ");
+        Console.Write("Enter the filename to load from (e.g., 'my_journal.txt' or 'my_journal.csv'): ");
         string filename = Console.ReadLine();
         
         if (string.IsNullOrWhiteSpace(filename))
@@ -245,7 +355,7 @@ class Program
             return;
         }
         
-        if (!filename.EndsWith(".txt"))
+        if (!filename.Contains("."))
         {
             filename += ".txt";
         }
@@ -264,7 +374,16 @@ class Program
             return;
         }
         
-        Console.Write("Enter the filename to save to (e.g., 'my_journal.txt'): ");
+        Console.WriteLine("Choose format:");
+        Console.WriteLine("1. CSV format (.csv) - Opens in Excel/Google Sheets");
+        Console.WriteLine("2. Text format (.txt) - Human readable");
+        Console.Write("Select format (1 or 2): ");
+        string formatChoice = Console.ReadLine();
+        
+        string defaultExtension = (formatChoice == "1") ? ".csv" : ".txt";
+        string exampleName = (formatChoice == "1") ? "my_journal.csv" : "my_journal.txt";
+        
+        Console.Write($"Enter the filename to save to (e.g., '{exampleName}'): ");
         string filename = Console.ReadLine();
         
         if (string.IsNullOrWhiteSpace(filename))
@@ -273,12 +392,17 @@ class Program
             return;
         }
         
-        if (!filename.EndsWith(".txt"))
+        if (!filename.Contains("."))
         {
-            filename += ".txt";
+            filename += defaultExtension;
         }
         
         _journal.SaveToFile(filename);
         Console.WriteLine($"📍 File location: {Path.GetFullPath(filename)}");
+        
+        if (filename.ToLower().EndsWith(".csv"))
+        {
+            Console.WriteLine("💡 You can now open this CSV file in Excel, Google Sheets, or any spreadsheet program!");
+        }
     }
 }
