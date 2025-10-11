@@ -4,66 +4,52 @@ class Program
 {
     static void Main(string[] args)
     {
-        Journal journal = new Journal();
+        Journal myJournal = new Journal();
         bool running = true;
-
-        Console.WriteLine("Welcome to Appam's Journal Program!");
 
         while (running)
         {
-            Console.WriteLine("\nPlease select one of the following choices:");
-            Console.WriteLine("1. Write");
-            Console.WriteLine("2. Display");
-            Console.WriteLine("3. Load");
-            Console.WriteLine("4. Save");
+            Console.WriteLine("\n Appam's Journal Menu:");
+            Console.WriteLine("1. Write a new entry");
+            Console.WriteLine("2. Display all entries");
+            Console.WriteLine("3. Save entries to file");
+            Console.WriteLine("4. Load entries from file");
             Console.WriteLine("5. Quit");
-            Console.Write("What would you like to do? ");
-
+            Console.Write("Choose the options above: ");
             string choice = Console.ReadLine();
 
-            switch (choice)
+            if (choice == "1")
             {
-                case "1":
-                    WriteNewEntry(journal);
-                    break;
-                case "2":
-                    journal.DisplayAll();
-                    break;
-                case "3":
-                    Console.Write("What is the filename? ");
-                    string loadFilename = Console.ReadLine();
-                    journal.LoadFromFile(loadFilename);
-                    break;
-                case "4":
-                    Console.Write("What is the filename? ");
-                    string saveFilename = Console.ReadLine();
-                    journal.SaveToFile(saveFilename);
-                    break;
-                case "5":
-                    running = false;
-                    Console.WriteLine("Goodbye!");
-                    break;
-                default:
-                    Console.WriteLine("Invalid choice. Please try again.");
-                    break;
+                Entry newEntry = new Entry();
+                string date = newEntry.GetDate();
+                string prompt = newEntry.GetPrompt();
+                string response = newEntry.GetResponse();
+                Entry completedEntry = new Entry(date, prompt, response);
+                myJournal.AddEntry(completedEntry);
+                Console.WriteLine("Entry added!");
+            }
+            else if (choice == "2")
+            {
+                myJournal.DisplayEntries();
+            }
+            else if (choice == "3")
+            {
+                myJournal.SaveToFile("appam's_journal.txt");
+            }
+            else if (choice == "4")
+            {
+                myJournal.LoadFromFile("appam's_journal.txt");
+            }
+            else if (choice == "5")
+            {
+                running = false;
+            }
+            else
+            {
+                Console.WriteLine("Invalid option.");
             }
         }
-    }
 
-    static void WriteNewEntry(Journal journal)
-    {
-        Prompt promptGenerator = new Prompt();
-        string randomPrompt = promptGenerator.getRandomPrompt();
-        
-        Console.WriteLine($"\n{randomPrompt}");
-        Console.Write("> ");
-        string response = Console.ReadLine();
-        
-        string currentDate = DateTime.Now.ToShortDateString();
-        
-        Entry newEntry = new Entry(currentDate, randomPrompt, response);
-        journal.AddEntry(newEntry);
-        
-        Console.WriteLine("Entry added successfully!");
+        Console.WriteLine("Goodbye!");
     }
 }

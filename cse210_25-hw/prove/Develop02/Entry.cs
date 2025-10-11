@@ -1,4 +1,4 @@
-class Entry
+public class Entry
 {
     //attributes
     private string _givenPrompt;
@@ -20,24 +20,31 @@ class Entry
 
     public string GetDate()
     {
+        _date = DateTime.Now.ToShortDateString();
         return _date;
     }
     public string GetPrompt()
     {
+        Prompt generator = new Prompt();
+        _givenPrompt = generator.getRandomPrompt();
         return _givenPrompt;    
     }
     public string GetResponse()
     {
-        if (string.IsNullOrEmpty(_givenPrompt))
-        {
-            Prompt generator = new Prompt();
-            _givenPrompt = generator.getRandomPrompt();
-        }
+        Console.WriteLine(_givenPrompt);
+        Console.Write("Ans: ");
+        _response = Console.ReadLine();
         return _response;
+    }
+    public void DisplayEntry()
+    {
+        Console.WriteLine($"Date: {_date}");
+        Console.WriteLine($"Prompt: {_givenPrompt}");
+        Console.WriteLine($"Response: {_response}");
     }
     public override string ToString()
     {
-        return $"Date: {_date}\nPrompt: {_givenPrompt}\nResponse: {_response}\n";
+        return $"{_date}#{_givenPrompt}#{_response}";
     }
 }
 
