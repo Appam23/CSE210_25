@@ -1,11 +1,11 @@
 class Scripture
 {
-    private Refrence _reference;
+    private Reference _reference;
     private List<Word> _words;
 
-    public Scripture(Refrence reference, string text)
+    public Scripture(Reference reference, string text)
     {
-        _reference = reference;
+    _reference = reference;
         _words = new List<Word>();
         
         // Split the text into words and create Word objects
@@ -50,7 +50,7 @@ class Scripture
 
     public string GetDisplayText()
     {
-        string displayText = _reference.GetScriptureRefrence() + " ";
+    string displayText = _reference.GetScriptureReference() + " ";
         
         foreach (Word word in _words)
         {

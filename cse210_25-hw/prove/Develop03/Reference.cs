@@ -1,23 +1,23 @@
-class Refrence
+class Reference
 {
     private string _book;
     private int _chapter;
     private string _verse;
 
-    public Refrence(string book, int chapter, int verse)
+    public Reference(string book, int chapter, int verse)
     {
         _book = book;
         _chapter = chapter;
         _verse = verse.ToString();
     }
 
-    public Refrence(string book, int chapter, int startVerse, int EndVerse)
+    public Reference(string book, int chapter, int startVerse, int EndVerse)
     {
         _book = book;
         _chapter = chapter;
         _verse = $"{startVerse}-{EndVerse}";
     }
-    public string GetScriptureRefrence()
+    public string GetScriptureReference()
     {
         return $"{_book} {_chapter}:{_verse}";
 

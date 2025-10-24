@@ -6,6 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
+
         // Find scripture.txt in the same directory as the executable, regardless of working directory
         string exeDir = AppDomain.CurrentDomain.BaseDirectory;
         string scripturePath = Path.Combine(exeDir, "scripture.txt");
@@ -76,8 +77,8 @@ class Program
         int startVerse = int.Parse(verses[0]);
         int endVerse = verses.Length > 1 ? int.Parse(verses[1]) : startVerse;
 
-        Refrence reference = new Refrence(book, chapter, startVerse, endVerse);
-        Scripture scripture = new Scripture(reference, chosen.text);
+    Reference reference = new Reference(book, chapter, startVerse, endVerse);
+    Scripture scripture = new Scripture(reference, chosen.text);
 
         // Display welcome message
         Console.WriteLine("Welcome to Scripture Memorizer!");
