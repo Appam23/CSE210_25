@@ -22,12 +22,13 @@ namespace GoalTracker
                 Console.WriteLine("1) Create a Simple goal");
                 Console.WriteLine("2) Create an Eternal goal");
                 Console.WriteLine("3) Create a Checklist goal");
-                Console.WriteLine("4) List goals");
-                Console.WriteLine("5) Record an event");
-                Console.WriteLine("6) Show score");
-                Console.WriteLine("7) Save goals");
-                Console.WriteLine("8) Load goals");
-                Console.WriteLine("9) Exit");
+                Console.WriteLine("4) Create a Negative goal");
+                Console.WriteLine("5) List goals");
+                Console.WriteLine("6) Record an event");
+                Console.WriteLine("7) Show score");
+                Console.WriteLine("8) Save goals");
+                Console.WriteLine("9) Load goals");
+                Console.WriteLine("10) Exit");
                 Console.Write("Choice: ");
                 string choice = Console.ReadLine()?.Trim();
 
@@ -42,26 +43,29 @@ namespace GoalTracker
                             CreateEternalGoal();
                             break;
                         case "3":
-                            CreateChecklistGoal();
-                            break;
-                        case "4":
-                            ListGoals();
-                            break;
-                        case "5":
-                            RecordEvent();
-                            break;
-                        case "6":
-                            Console.WriteLine($"\nTotal score: {_score} pts");
-                            break;
-                        case "7":
-                            SaveGoals();
-                            break;
-                        case "8":
-                            LoadGoals();
-                            break;
-                        case "9":
-                            Console.WriteLine("Goodbye!");
-                            return;
+                        CreateChecklistGoal();
+                        break;
+                    case "4":
+                        CreateNegativeGoal();
+                        break;
+                    case "5":
+                        ListGoals();
+                        break;
+                    case "6":
+                        RecordEvent();
+                        break;
+                    case "7":
+                        Console.WriteLine($"\nTotal score: {_score} pts");
+                        break;
+                    case "8":
+                        SaveGoals();
+                        break;
+                    case "9":
+                        LoadGoals();
+                        break;
+                    case "10":
+                        Console.WriteLine("\nGoodbye!");
+                        return;
                         default:
                             Console.WriteLine("Invalid choice.");
                             break;
@@ -125,6 +129,23 @@ namespace GoalTracker
             _goals.Add(newGoal);
             
             Console.WriteLine("✓ Checklist goal created!");
+        }
+
+        private static void CreateNegativeGoal()
+        {
+            Console.WriteLine("\n=== Create a Negative Goal ===");
+            Console.WriteLine("(Lose points when you do something bad)\n");
+
+            Console.Write("Name: ");
+            string name = Console.ReadLine() ?? string.Empty;
+            Console.Write("Description: ");
+            string description = Console.ReadLine() ?? string.Empty;
+            int penaltyPoints = ReadInt("Penalty points: ", 0);
+
+            NegativeGoal newGoal = new NegativeGoal(name, description, penaltyPoints);
+            _goals.Add(newGoal);
+            
+            Console.WriteLine("✓ Negative goal created!");
         }
 
         private static void ListGoals()
@@ -218,6 +239,7 @@ namespace GoalTracker
                     "Simple" => new SimpleGoal(name, description, points, isCompleted),
                     "Eternal" => new EternalGoal(name, description, points),
                     "Checklist" => new ChecklistGoal(name, description, points, int.Parse(parts[5]), int.Parse(parts[7]), int.Parse(parts[6]), isCompleted),
+                    "Negative" => new NegativeGoal(name, description, points),
                     _ => null
                 };
 

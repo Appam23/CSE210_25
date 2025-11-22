@@ -29,7 +29,7 @@ namespace GoalTracker.Models
             protected set => _isCompleted = value;
         }
 
-       
+       // Template: All goals MUST implement these methods
         public abstract int RecordEvent();
 
         
