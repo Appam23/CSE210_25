@@ -1,0 +1,16 @@
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/bin/Debug/net8.0/Develop03
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/bin/Debug/net8.0/Develop03.deps.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/bin/Debug/net8.0/Develop03.runtimeconfig.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/bin/Debug/net8.0/Develop03.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/bin/Debug/net8.0/Develop03.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/obj/Debug/net8.0/Develop03.GeneratedMSBuildEditorConfig.editorconfig
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/obj/Debug/net8.0/Develop03.AssemblyInfoInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/obj/Debug/net8.0/Develop03.AssemblyInfo.cs
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/obj/Debug/net8.0/Develop03.csproj.CoreCompileInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/obj/Debug/net8.0/Develop03.sourcelink.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/obj/Debug/net8.0/Develop03.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/obj/Debug/net8.0/refint/Develop03.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/obj/Debug/net8.0/Develop03.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/obj/Debug/net8.0/Develop03.genruntimeconfig.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/obj/Debug/net8.0/ref/Develop03.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prove/Develop03/bin/Debug/net8.0/scripture.txt

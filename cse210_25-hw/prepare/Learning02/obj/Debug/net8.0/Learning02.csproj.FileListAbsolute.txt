@@ -1,0 +1,15 @@
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/bin/Debug/net8.0/Learning02
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/bin/Debug/net8.0/Learning02.deps.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/bin/Debug/net8.0/Learning02.runtimeconfig.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/bin/Debug/net8.0/Learning02.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/bin/Debug/net8.0/Learning02.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/obj/Debug/net8.0/Learning02.GeneratedMSBuildEditorConfig.editorconfig
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/obj/Debug/net8.0/Learning02.AssemblyInfoInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/obj/Debug/net8.0/Learning02.AssemblyInfo.cs
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/obj/Debug/net8.0/Learning02.csproj.CoreCompileInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/obj/Debug/net8.0/Learning02.sourcelink.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/obj/Debug/net8.0/Learning02.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/obj/Debug/net8.0/refint/Learning02.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/obj/Debug/net8.0/Learning02.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/obj/Debug/net8.0/Learning02.genruntimeconfig.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning02/obj/Debug/net8.0/ref/Learning02.dll

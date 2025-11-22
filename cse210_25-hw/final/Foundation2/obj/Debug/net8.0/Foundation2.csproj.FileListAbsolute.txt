@@ -1,0 +1,15 @@
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/bin/Debug/net8.0/Foundation2
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/bin/Debug/net8.0/Foundation2.deps.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/bin/Debug/net8.0/Foundation2.runtimeconfig.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/bin/Debug/net8.0/Foundation2.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/bin/Debug/net8.0/Foundation2.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/obj/Debug/net8.0/Foundation2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/obj/Debug/net8.0/Foundation2.AssemblyInfoInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/obj/Debug/net8.0/Foundation2.AssemblyInfo.cs
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/obj/Debug/net8.0/Foundation2.csproj.CoreCompileInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/obj/Debug/net8.0/Foundation2.sourcelink.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/obj/Debug/net8.0/Foundation2.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/obj/Debug/net8.0/refint/Foundation2.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/obj/Debug/net8.0/Foundation2.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/obj/Debug/net8.0/Foundation2.genruntimeconfig.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/final/Foundation2/obj/Debug/net8.0/ref/Foundation2.dll

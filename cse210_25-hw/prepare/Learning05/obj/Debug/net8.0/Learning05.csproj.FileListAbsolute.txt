@@ -1,0 +1,15 @@
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/bin/Debug/net8.0/Learning05
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/bin/Debug/net8.0/Learning05.deps.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/bin/Debug/net8.0/Learning05.runtimeconfig.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/bin/Debug/net8.0/Learning05.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/bin/Debug/net8.0/Learning05.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/obj/Debug/net8.0/Learning05.GeneratedMSBuildEditorConfig.editorconfig
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/obj/Debug/net8.0/Learning05.AssemblyInfoInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/obj/Debug/net8.0/Learning05.AssemblyInfo.cs
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/obj/Debug/net8.0/Learning05.csproj.CoreCompileInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/obj/Debug/net8.0/Learning05.sourcelink.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/obj/Debug/net8.0/Learning05.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/obj/Debug/net8.0/refint/Learning05.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/obj/Debug/net8.0/Learning05.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/obj/Debug/net8.0/Learning05.genruntimeconfig.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/prepare/Learning05/obj/Debug/net8.0/ref/Learning05.dll

@@ -1,0 +1,15 @@
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/bin/Debug/net8.0/Sandbox
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/bin/Debug/net8.0/Sandbox.deps.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/bin/Debug/net8.0/Sandbox.runtimeconfig.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/bin/Debug/net8.0/Sandbox.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/bin/Debug/net8.0/Sandbox.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/obj/Debug/net8.0/Sandbox.GeneratedMSBuildEditorConfig.editorconfig
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/obj/Debug/net8.0/Sandbox.AssemblyInfoInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/obj/Debug/net8.0/Sandbox.AssemblyInfo.cs
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/obj/Debug/net8.0/Sandbox.csproj.CoreCompileInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/obj/Debug/net8.0/Sandbox.sourcelink.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/obj/Debug/net8.0/Sandbox.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/obj/Debug/net8.0/refint/Sandbox.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/obj/Debug/net8.0/Sandbox.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/obj/Debug/net8.0/Sandbox.genruntimeconfig.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/sandbox/Sandbox/obj/Debug/net8.0/ref/Sandbox.dll

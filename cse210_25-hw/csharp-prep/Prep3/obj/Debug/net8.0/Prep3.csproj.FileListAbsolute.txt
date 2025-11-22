@@ -1,0 +1,15 @@
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/bin/Debug/net8.0/Prep3
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/bin/Debug/net8.0/Prep3.deps.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/bin/Debug/net8.0/Prep3.runtimeconfig.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/bin/Debug/net8.0/Prep3.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/bin/Debug/net8.0/Prep3.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/obj/Debug/net8.0/Prep3.GeneratedMSBuildEditorConfig.editorconfig
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/obj/Debug/net8.0/Prep3.AssemblyInfoInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/obj/Debug/net8.0/Prep3.AssemblyInfo.cs
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/obj/Debug/net8.0/Prep3.csproj.CoreCompileInputs.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/obj/Debug/net8.0/Prep3.sourcelink.json
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/obj/Debug/net8.0/Prep3.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/obj/Debug/net8.0/refint/Prep3.dll
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/obj/Debug/net8.0/Prep3.pdb
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/obj/Debug/net8.0/Prep3.genruntimeconfig.cache
+/Users/appam/Desktop/CSE210_25/cse210_25-hw/csharp-prep/Prep3/obj/Debug/net8.0/ref/Prep3.dll

@@ -1,0 +1,4 @@
+50
+Simple|Run|Run 10 Km|50|True|0|0|0
+Eternal|Read|Rean NT and OT|50|False|0|0|0
+Checklist|Attend Temple Ordinance|Go to temple every week|10|False|4|0|500
