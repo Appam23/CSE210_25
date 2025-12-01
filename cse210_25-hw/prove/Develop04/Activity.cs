@@ -13,7 +13,7 @@ namespace MindfulActivities
         protected TimeSpan _duration;
         private Stopwatch _stopwatch;
         private int _tickCount = 0;
-        private readonly string[] _tickChars = { "🧘", "🧘‍♀️", "🧘‍♂️", "🤸", "🤸‍♀️", "🤸‍♂️" };
+        private readonly string[] _tickChars = { "|", "/", "-", "\\" };
 
         protected Activity(string startMessage = "Starting activity...", string endMessage = "Activity finished.")
         {
@@ -85,18 +85,74 @@ namespace MindfulActivities
         }
         
         return hasTime;
-    }        // Small utility to wait while printing a simple countdown (non-blocking for demo)
+    }        // Countdown with backspace animation
         protected void Countdown(int seconds)
         {
             for (int i = seconds; i >= 1; i--)
             {
                 Console.Write(i);
-                Thread.Sleep(500);
-                Console.Write(".");
-                Thread.Sleep(500);
-                if (i > 1) Console.Write(" ");
+                Thread.Sleep(1000);
+                Console.Write("\b \b"); // Backspace, space, backspace to erase
             }
             Console.WriteLine();
+        }
+
+        // Spinning animation for pauses
+        protected void ShowSpinner(int seconds)
+        {
+            string[] spinner = { "|", "/", "-", "\\" };
+            int iterations = seconds * 4; // 4 frames per second
+            
+            for (int i = 0; i < iterations; i++)
+            {
+                Console.Write(spinner[i % 4]);
+                Thread.Sleep(250);
+                Console.Write("\b \b"); // Backspace to erase spinner
+            }
+        }
+
+        // Animated dots for pauses
+        protected void ShowDots(int seconds)
+        {
+            int dotCount = 0;
+            int iterations = seconds * 2; // 2 dots per second
+            
+            for (int i = 0; i < iterations; i++)
+            {
+                Console.Write(".");
+                dotCount++;
+                Thread.Sleep(500);
+                
+                // Reset after 3 dots
+                if (dotCount >= 3)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        Console.Write("\b \b");
+                    }
+                    dotCount = 0;
+                }
+            }
+            
+            // Clear any remaining dots
+            for (int j = 0; j < dotCount; j++)
+            {
+                Console.Write("\b \b");
+            }
+        }
+
+        // Pulsing animation
+        protected void ShowPulse(int seconds)
+        {
+            string[] pulse = { "⚫", "⚪", "⚫", "⚪" };
+            int iterations = seconds * 2;
+            
+            for (int i = 0; i < iterations; i++)
+            {
+                Console.Write(pulse[i % pulse.Length]);
+                Thread.Sleep(500);
+                Console.Write("\b \b");
+            }
         }
     }
 }

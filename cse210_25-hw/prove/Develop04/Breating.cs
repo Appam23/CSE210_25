@@ -20,8 +20,8 @@ namespace MindfulActivities
             Console.WriteLine();
             Console.WriteLine($"Duration: {ActivityDuration().TotalSeconds:F0} seconds");
             Console.WriteLine();
-            Console.WriteLine("Get ready...");
-            Countdown(3);
+            Console.Write("Get ready...");
+            ShowSpinner(3);
             Console.WriteLine();
 
             bool breatheIn = true;
@@ -55,6 +55,7 @@ namespace MindfulActivities
         // Display countdown after the breathing message
         private void PrintCountdown(int seconds)
         {
+            Console.Write(" ");
             for (int i = seconds; i >= 1; i--)
             {
                 if (!TimeRemaining())
@@ -62,8 +63,9 @@ namespace MindfulActivities
                     Console.WriteLine();
                     return;
                 }
-                Console.Write($" {i}");
+                Console.Write(i);
                 Thread.Sleep(1000);
+                Console.Write("\b \b"); // Backspace to erase the number
             }
             Console.WriteLine();
         }
