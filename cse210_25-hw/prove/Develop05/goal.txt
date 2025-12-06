@@ -1,4 +1,6 @@
-50
-Simple|Run|Run 10 Km|50|True|0|0|0
-Eternal|Read|Rean NT and OT|50|False|0|0|0
-Checklist|Attend Temple Ordinance|Go to temple every week|10|False|4|0|500
+20
+Simple|Run|Run 5 KM|10|True|0|0|0
+Eternal|Read|Read NT and OT for 15 minutes|50|False|0|0|0
+Checklist|Attend Temple|Go to Temple once a week.|30|False|4|1|500
+Negative|ate Juck food lately.|McDonal and Chick-Fill-A|20|False|0|0|0
+Simple|Run|5Km|10|False|0|0|0
