@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+namespace OrderingSystem
+{
     public class Order
     {
         private Customer _customer;
@@ -54,3 +56,4 @@ using System.Text;
             return $"{_customer.Name}\n{_customer.Address.GetAddressString()}";
         }
     }
+}
